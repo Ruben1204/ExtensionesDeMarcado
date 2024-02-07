@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ExtencionesDeMarcado"
+             x:Class="ExtencionesDeMarcado.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Button" x:Key="estiloBoton" >
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Rotation" Value="-15"/>
+        </Style>
+
+        <x:Double x:Key="anchoDeBorde">3</x:Double>
+
+        <OnPlatform x:Key="colorTexto"
+                    x:TypeArguments="Color">
+            <On Platform="WinUI" Value="#80FF80"/>
+            <On Platform="Android" Value="Aqua"/>
+        </OnPlatform>
+       
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="20">
+        
+        <Button Text="Primer caso"
+                Style="{StaticResource estiloBoton}"
+                BorderWidth="{StaticResource anchoDeBorde}"
+                BackgroundColor="{x:Static local:ConstantesApp.ColorPrimarioPlano}"
+                TextColor="{StaticResource colorTexto}"/>
+        <Button Text="Segundo caso"
+                Style="{StaticResource estiloBoton}"
+                BorderWidth="{StaticResource anchoDeBorde}"
+                FontSize="36"
+                BackgroundColor="{x:Static local:ConstantesApp.BackgroundColor}"
+                TextColor="{StaticResource colorTexto}"/>
+        
+    </StackLayout>
+</ContentPage>
